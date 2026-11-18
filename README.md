@@ -82,18 +82,18 @@ This is done once, on Discord's website.
 
 1. Open the [Discord Developer Portal](https://discord.com/developers/applications) and click **New Application**.
 
-   > [!TIP]
-   > Discord refuses application names containing “Discord”. Call it whatever you like, for example “Homelab Relay”: it's only the bot's name on your server.
+> [!TIP]
+> Discord refuses application names containing “Discord”. Call it whatever you like, for example “Homelab Relay”: it's only the bot's name on your server.
 
 2. **Bot** tab: click **Reset Token** and copy the token.
 
-   > [!CAUTION]
-   > The token is a password to your bot. Paste it only into HookBar, never into a chat, an issue or a screenshot. If it leaks, click **Reset Token** again: the old one stops working.
+> [!CAUTION]
+> The token is a password to your bot. Paste it only into HookBar, never into a chat, an issue or a screenshot. If it leaks, click **Reset Token** again: the old one stops working.
 
 3. Still in **Bot**, under **Privileged Gateway Intents**, turn on **Message Content Intent** and save.
 
-   > [!WARNING]
-   > Without **Message Content Intent**, Discord refuses the connection and HookBar shows an error. A bot on fewer than 100 servers doesn't need Discord's approval for it.
+> [!WARNING]
+> Without **Message Content Intent**, Discord refuses the connection and HookBar shows an error. A bot on fewer than 100 servers doesn't need Discord's approval for it.
 
 4. **OAuth2 › URL Generator** tab: tick the `bot` scope, then the **View Channels** and **Read Message History** permissions. Open the generated URL at the bottom of the page and invite the bot to your server.
 5. **Private channels**: give the bot (or its role) access to the ones you want to follow.

@@ -82,18 +82,18 @@ Il te faut un serveur Discord où tu peux inviter un bot, ce qui demande la perm
 
 1. Ouvre le [portail développeur Discord](https://discord.com/developers/applications) et clique sur **New Application**.
 
-   > [!TIP]
-   > Discord refuse les noms d'application qui contiennent « Discord ». Appelle-la comme tu veux, par exemple « Homelab Relay » : ce n'est que le nom du bot sur ton serveur.
+> [!TIP]
+> Discord refuse les noms d'application qui contiennent « Discord ». Appelle-la comme tu veux, par exemple « Homelab Relay » : ce n'est que le nom du bot sur ton serveur.
 
 2. Onglet **Bot** : clique sur **Reset Token** et copie le jeton.
 
-   > [!CAUTION]
-   > Le jeton est le mot de passe de ton bot. Colle-le uniquement dans HookBar, jamais dans une discussion, une issue ou une capture d'écran. S'il fuite, clique de nouveau sur **Reset Token** : l'ancien ne fonctionne plus.
+> [!CAUTION]
+> Le jeton est le mot de passe de ton bot. Colle-le uniquement dans HookBar, jamais dans une discussion, une issue ou une capture d'écran. S'il fuite, clique de nouveau sur **Reset Token** : l'ancien ne fonctionne plus.
 
 3. Toujours dans **Bot**, sous **Privileged Gateway Intents**, active **Message Content Intent** et enregistre.
 
-   > [!WARNING]
-   > Sans **Message Content Intent**, Discord refuse la connexion et HookBar affiche une erreur. Un bot présent sur moins de 100 serveurs n'a pas besoin de l'accord de Discord pour l'activer.
+> [!WARNING]
+> Sans **Message Content Intent**, Discord refuse la connexion et HookBar affiche une erreur. Un bot présent sur moins de 100 serveurs n'a pas besoin de l'accord de Discord pour l'activer.
 
 4. Onglet **OAuth2 › URL Generator** : coche le scope `bot`, puis les permissions **View Channels** et **Read Message History**. Ouvre l'URL générée en bas de la page et invite le bot sur ton serveur.
 5. **Salons privés** : donne au bot (ou à son rôle) l'accès à ceux que tu veux suivre.
