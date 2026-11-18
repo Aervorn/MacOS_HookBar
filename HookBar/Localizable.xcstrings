@@ -1,0 +1,816 @@
+{
+  "sourceLanguage": "fr",
+  "strings": {
+    "%lld nouveaux messages": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld new messages"
+          }
+        }
+      }
+    },
+    "Active « Message Content Intent » dans l'onglet Bot du portail développeur Discord.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Turn on “Message Content Intent” in the Bot tab of the Discord Developer Portal."
+          }
+        }
+      }
+    },
+    "Actualiser": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Refresh"
+          }
+        }
+      }
+    },
+    "Ajoute le jeton de ton bot dans les Réglages pour recevoir les messages de tes salons.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add your bot's token in Settings to receive messages from your channels."
+          }
+        }
+      }
+    },
+    "Apparence": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Appearance"
+          }
+        }
+      }
+    },
+    "Aucun jeton": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No token"
+          }
+        }
+      }
+    },
+    "Aucun message non lu": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No unread messages"
+          }
+        }
+      }
+    },
+    "Aucune icône trouvée.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No icon found."
+          }
+        }
+      }
+    },
+    "Automatique": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Automatic"
+          }
+        }
+      }
+    },
+    "Bannière": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Banner"
+          }
+        }
+      }
+    },
+    "Bannière macOS pour chaque nouveau message": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "macOS banner for every new message"
+          }
+        }
+      }
+    },
+    "Bot Discord": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Discord bot"
+          }
+        }
+      }
+    },
+    "Changer l'icône": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Change icon"
+          }
+        }
+      }
+    },
+    "Chargement du catalogue d'icônes…": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Loading the icon catalog…"
+          }
+        }
+      }
+    },
+    "Clair": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Light"
+          }
+        }
+      }
+    },
+    "Clique sur une icône pour la changer. Les bannières macOS ne concernent que les salons cochés.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Click an icon to change it. macOS banners only apply to followed channels."
+          }
+        }
+      }
+    },
+    "Code source sur GitHub": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Source code on GitHub"
+          }
+        }
+      }
+    },
+    "Colle le jeton de ton bot": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Paste your bot's token"
+          }
+        }
+      }
+    },
+    "Comportement": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Behavior"
+          }
+        }
+      }
+    },
+    "Connecte ton bot Discord": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Connect your Discord bot"
+          }
+        }
+      }
+    },
+    "Connecté": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Connected"
+          }
+        }
+      }
+    },
+    "Connecté : %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Connected: %@"
+          }
+        }
+      }
+    },
+    "Connexion à Discord…": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Connecting to Discord…"
+          }
+        }
+      }
+    },
+    "Connexion…": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Connecting…"
+          }
+        }
+      }
+    },
+    "Créé par Aervorn, avec l'aide de Claude.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Made by Aervorn, with help from Claude."
+          }
+        }
+      }
+    },
+    "Discord a refusé le jeton du bot. Vérifie-le dans les Réglages.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Discord rejected the bot token. Check it in Settings."
+          }
+        }
+      }
+    },
+    "Données": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Data"
+          }
+        }
+      }
+    },
+    "Déconnecté": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Disconnected"
+          }
+        }
+      }
+    },
+    "Déconnecté de Discord": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Disconnected from Discord"
+          }
+        }
+      }
+    },
+    "English": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "English"
+          }
+        }
+      }
+    },
+    "Enregistrer et se connecter": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Save and connect"
+          }
+        }
+      }
+    },
+    "Français": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Français"
+          }
+        }
+      }
+    },
+    "HookBar n'est ni affilié à Discord, ni approuvé par Discord.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "HookBar isn't affiliated with or endorsed by Discord."
+          }
+        }
+      }
+    },
+    "Icône du salon": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Channel icon"
+          }
+        }
+      }
+    },
+    "Icônes :": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Icons:"
+          }
+        }
+      }
+    },
+    "Icônes : selfh.st/icons": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Icons: selfh.st/icons"
+          }
+        }
+      }
+    },
+    "Initiale": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Initial"
+          }
+        }
+      }
+    },
+    "Jeton du bot": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bot token"
+          }
+        }
+      }
+    },
+    "La nouvelle langue s'appliquera au prochain lancement.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The new language applies the next time HookBar starts."
+          }
+        }
+      }
+    },
+    "Langue": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Language"
+          }
+        }
+      }
+    },
+    "Langue du système": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "System language"
+          }
+        }
+      }
+    },
+    "Le jeton reste dans le trousseau de ton Mac. Dans l'onglet Bot du portail développeur, active « Message Content Intent » et invite le bot sur ton serveur.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The token stays in your Mac's keychain. In the Bot tab of the Developer Portal, turn on “Message Content Intent” and invite the bot to your server."
+          }
+        }
+      }
+    },
+    "Les messages de tes salons Discord dans la barre de menus de macOS, sans ouvrir Discord.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Messages from your Discord channels in the macOS menu bar, without opening Discord."
+          }
+        }
+      }
+    },
+    "Les mises à jour automatiques sont désactivées dans les versions de développement.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Automatic updates are turned off in development builds."
+          }
+        }
+      }
+    },
+    "Les salons de ton serveur apparaîtront ici une fois le bot connecté.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your server's channels will show up here once the bot is connected."
+          }
+        }
+      }
+    },
+    "Marquer comme lu": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mark as read"
+          }
+        }
+      }
+    },
+    "Marquer comme lu en cliquant sur un message": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mark as read when clicking a message"
+          }
+        }
+      }
+    },
+    "Marquer comme non lu": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mark as unread"
+          }
+        }
+      }
+    },
+    "Marquer le salon comme lu": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mark channel as read"
+          }
+        }
+      }
+    },
+    "Messages :": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Messages:"
+          }
+        }
+      }
+    },
+    "Mises à jour": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Updates"
+          }
+        }
+      }
+    },
+    "Mises à jour :": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Updates:"
+          }
+        }
+      }
+    },
+    "OK": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "OK"
+          }
+        }
+      }
+    },
+    "Ouvrir HookBar à l'ouverture de session": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open HookBar at login"
+          }
+        }
+      }
+    },
+    "Ouvrir dans Discord": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open in Discord"
+          }
+        }
+      }
+    },
+    "Ouvrir le portail développeur Discord": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open the Discord Developer Portal"
+          }
+        }
+      }
+    },
+    "Ouvrir les Réglages": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open Settings"
+          }
+        }
+      }
+    },
+    "Quitter HookBar": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quit HookBar"
+          }
+        }
+      }
+    },
+    "Rechercher automatiquement chaque jour": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Check automatically every day"
+          }
+        }
+      }
+    },
+    "Rechercher les mises à jour…": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Check for Updates…"
+          }
+        }
+      }
+    },
+    "Rechercher une application": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Search for an app"
+          }
+        }
+      }
+    },
+    "Rechercher une application (ex. Proxmox)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Search for an app (e.g. Proxmox)"
+          }
+        }
+      }
+    },
+    "Relancer": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Relaunch"
+          }
+        }
+      }
+    },
+    "Réessayer": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Try again"
+          }
+        }
+      }
+    },
+    "Réglages": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Settings"
+          }
+        }
+      }
+    },
+    "Réglages de HookBar": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "HookBar Settings"
+          }
+        }
+      }
+    },
+    "Réglages…": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Settings…"
+          }
+        }
+      }
+    },
+    "Salons": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Channels"
+          }
+        }
+      }
+    },
+    "Sombre": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dark"
+          }
+        }
+      }
+    },
+    "Suivi": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Followed"
+          }
+        }
+      }
+    },
+    "Suivre automatiquement les nouveaux salons": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Automatically follow new channels"
+          }
+        }
+      }
+    },
+    "Suivre le système": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Match system"
+          }
+        }
+      }
+    },
+    "Symboles": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Symbols"
+          }
+        }
+      }
+    },
+    "Thème": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Theme"
+          }
+        }
+      }
+    },
+    "Tous les salons": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "All channels"
+          }
+        }
+      }
+    },
+    "Tout est calme pour l'instant.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "All quiet for now."
+          }
+        }
+      }
+    },
+    "Tout marquer comme lu": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mark all as read"
+          }
+        }
+      }
+    },
+    "Version installée": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Installed version"
+          }
+        }
+      }
+    },
+    "Vider le cache des icônes": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Clear icon cache"
+          }
+        }
+      }
+    },
+    "À propos de HookBar": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "About HookBar"
+          }
+        }
+      }
+    },
+    "à l'instant": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "just now"
+          }
+        }
+      }
+    }
+  },
+  "version": "1.0"
+}

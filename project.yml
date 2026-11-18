@@ -1,0 +1,81 @@
+# Projet XcodeGen : `xcodegen generate` crée HookBar.xcodeproj
+name: HookBar
+options:
+  bundleIdPrefix: io.github.aervorn
+  deploymentTarget:
+    macOS: "26.0"
+  createIntermediateGroups: true
+  developmentLanguage: fr
+
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    MARKETING_VERSION: "0.1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    LOCALIZATION_PREFERS_STRING_CATALOGS: YES
+    SWIFT_EMIT_LOC_STRINGS: YES
+
+packages:
+  Sparkle:
+    url: https://github.com/sparkle-project/Sparkle
+    from: "2.10.0"
+
+targets:
+  HookBar:
+    type: application
+    platform: macOS
+    sources:
+      - path: HookBar
+    dependencies:
+      - package: Sparkle
+    info:
+      path: Support/Info.plist
+      properties:
+        CFBundleDisplayName: HookBar
+        CFBundleDevelopmentRegion: fr
+        CFBundleLocalizations: [fr, en]
+        CFBundleShortVersionString: "$(MARKETING_VERSION)"
+        CFBundleVersion: "$(CURRENT_PROJECT_VERSION)"
+        LSApplicationCategoryType: public.app-category.utilities
+        LSMinimumSystemVersion: "$(MACOSX_DEPLOYMENT_TARGET)"
+        # App de barre de menus : pas d'icône dans le Dock ni dans ⌘⇥
+        LSUIElement: true
+        # Sparkle : appcast.xml à la racine du dépôt, réécrit par scripts/make-dmg.sh
+        SUFeedURL: https://raw.githubusercontent.com/Aervorn/MacOS_HookBar/main/appcast.xml
+        SUPublicEDKey: "$(SPARKLE_PUBLIC_ED_KEY)"
+        SUEnableAutomaticChecks: true
+        SUScheduledCheckInterval: 86400
+        SUAutomaticallyUpdate: false
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: io.github.aervorn.hookbar
+        PRODUCT_NAME: HookBar
+        # Clé publique EdDSA de Sparkle, la même que Vestora et Flux
+        # (la clé privée correspondante reste dans le trousseau de qui publie)
+        SPARKLE_PUBLIC_ED_KEY: "eZCHe74IeZ8DBTAY+tVftTLA2+kKJT3xD5e/QmhV2sE="
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        # Signature locale ("Sign to Run Locally") : pas besoin de compte développeur.
+        # scripts/make-dmg.sh signe la version publiée avec le certificat « Aervorn Code Signing ».
+        CODE_SIGN_IDENTITY: "-"
+        CODE_SIGN_STYLE: Manual
+        DEVELOPMENT_TEAM: ""
+        ENABLE_HARDENED_RUNTIME: NO
+        ENABLE_APP_SANDBOX: NO
+    scheme:
+      testTargets:
+        - HookBarTests
+
+  # Tests sans app hôte : ils compilent directement le dossier Core (Foundation seulement).
+  HookBarTests:
+    type: bundle.unit-test
+    platform: macOS
+    sources:
+      - path: HookBarTests
+      - path: HookBar/Core
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: io.github.aervorn.hookbar.tests
+        GENERATE_INFOPLIST_FILE: YES
+        CODE_SIGN_IDENTITY: "-"
+        CODE_SIGN_STYLE: Manual
+        DEVELOPMENT_TEAM: ""
