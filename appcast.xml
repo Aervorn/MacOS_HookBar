@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle">
+  <channel>
+    <title>HookBar</title>
+    <link>https://github.com/Aervorn/MacOS_HookBar</link>
+    <item>
+      <title>HookBar 0.1.0</title>
+      <pubDate>Wed, 18 Nov 2026 21:19:58 +0000</pubDate>
+      <sparkle:version>1</sparkle:version>
+      <sparkle:shortVersionString>0.1.0</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[<ul><li>First public version: menu bar counter, Gitify-style window, Discord embeds, mark as read (checks or click), channels and banners in Settings, automatic selfh.st icons, catching up on missed messages, French and English, light and dark mode, open at login, Sparkle updates.</li></ul>]]></description>
+      <description xml:lang="fr"><![CDATA[<ul><li>Première version publique : compteur dans la barre de menus, fenêtre façon Gitify, embeds Discord, marquer comme lu (coches ou clic), salons et bannières dans les Réglages, icônes selfh.st automatiques, rattrapage des messages manqués, français et anglais, mode clair et sombre, ouverture à la connexion, mises à jour Sparkle.</li></ul>]]></description>
+      <enclosure url="https://github.com/Aervorn/MacOS_HookBar/releases/download/v0.1.0/HookBar-0.1.0.dmg" type="application/octet-stream" sparkle:edSignature="2dlG6ESPHiAn0ofzZG+y4/ZbisMecu+kVnRhFwE1/2rGqiLXWx4zkKNdQxrP4kNd8hJDqzNbtWKUXgE6i04KBQ==" length="3409419" />
+    </item>
+  </channel>
+</rss>
