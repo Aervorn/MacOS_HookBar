@@ -46,6 +46,15 @@ struct SettingsView: View {
                         Text(language.label).tag(language)
                     }
                 }
+                Toggle("Nombre de non-lus en couleur dans la barre de menus", isOn: $preferences.colorUnreadCount)
+                if preferences.colorUnreadCount {
+                    ColorPicker("Couleur du nombre", selection: unreadColorBinding, supportsOpacity: false)
+                    if preferences.unreadCountColor != AppPreferences.defaultUnreadCountColor {
+                        Button("Revenir à la couleur par défaut") {
+                            preferences.unreadCountColor = AppPreferences.defaultUnreadCountColor
+                        }
+                    }
+                }
                 if preferences.language != preferences.launchLanguage {
                     HStack {
                         Text("La nouvelle langue s'appliquera au prochain lancement.")
@@ -95,6 +104,23 @@ struct SettingsView: View {
         .onAppear {
             token = Keychain.read(Keychain.Account.botToken) ?? ""
         }
+    }
+
+    // MARK: - Apparence
+
+    /// Le sélecteur travaille avec une `Color`, la préférence est un entier 0xRRGGBB.
+    private var unreadColorBinding: Binding<Color> {
+        Binding(
+            get: { Color(rgb: preferences.unreadCountColor) },
+            set: { color in
+                guard let srgb = NSColor(color).usingColorSpace(.sRGB) else { return }
+                // Bornage : un écran à large gamut peut donner des composantes hors de 0…1
+                func byte(_ value: CGFloat) -> Int { Int((min(max(value, 0), 1) * 255).rounded()) }
+                preferences.unreadCountColor = byte(srgb.redComponent) << 16
+                    | byte(srgb.greenComponent) << 8
+                    | byte(srgb.blueComponent)
+            }
+        )
     }
 
     // MARK: - Bot

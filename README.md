@@ -37,6 +37,7 @@ The menu bar shows how many messages are waiting. A click opens a window inspire
 
 ### 🔔 Menu bar
 - A bell with the **number of unread messages**; a slashed bell when Discord can't be reached.
+- The unread count is shown **in color**: pick your own, or turn it off in **Settings › Appearance**.
 - No Dock icon and nothing in ⌘⇥: HookBar only lives in the menu bar.
 
 ### 🗂️ The window
@@ -60,7 +61,7 @@ The menu bar shows how many messages are waiting. A click opens a window inspire
 - After a long disconnection, a single summary banner instead of a flood.
 
 ### 🔄 Reliable
-- Real-time connection (Discord Gateway), with automatic reconnection after a network loss or when the Mac wakes up.
+- Real-time connection (Discord Gateway), with automatic reconnection after a network loss or when the Mac wakes up. A network loss shows up right away, and the connection resumes as soon as the network is back.
 - **Nothing is lost**: when it reconnects, HookBar fetches the messages posted while it was offline (up to 100 per channel).
 - New channels on your server are followed automatically (can be turned off).
 
@@ -145,6 +146,11 @@ HookBar collects nothing and sends nothing about you: no account, no analytics, 
 HookBar updates itself: it checks for a new version once a day and offers to install it, with its release notes (or use **⚙ › Check for Updates…** in the window). Updates are signed, and HookBar refuses any file that wasn't signed by the author. Automatic checking can be turned off in **Settings › Updates**. Your unread messages, settings and token are kept.
 
 ## 📝 Changelog
+
+### 0.2.0
+- **Colored unread count** in the menu bar, in the color of your choice (can be turned off in Settings).
+- Fix: with no network or when Discord can't be reached, HookBar now shows **Disconnected** and the slashed bell, instead of staying on “Connecting to Discord…”.
+- Immediate reconnection when the network is back, and a stuck connection attempt is dropped after 10 seconds.
 
 ### 0.1.0
 - First public version: menu bar counter, Gitify-style window, Discord embeds, mark as read (checks or click), channels and banners in Settings, automatic selfh.st icons, catching up on missed messages, French and English, light and dark mode, open at login, Sparkle updates.

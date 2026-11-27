@@ -100,6 +100,7 @@ final class AppStore {
         switch state {
         case .connecting: connection = .connecting
         case .connected: connection = .connected
+        case .unreachable: connection = .offline
         case .disconnected: connection = token == nil ? .noToken : .offline
         case .failed(let message): connection = .failed(message)
         }

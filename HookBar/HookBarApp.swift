@@ -23,6 +23,7 @@ struct HookBarApp: App {
         } label: {
             MenuBarLabel()
                 .environment(store)
+                .environment(preferences)
                 // L'icône de la barre de menus existe dès le lancement (la fenêtre, seulement au premier clic)
                 .task { start() }
         }
@@ -61,13 +62,22 @@ struct HookBarApp: App {
 /// Icône de la barre de menus, avec le nombre de messages non lus.
 struct MenuBarLabel: View {
     @Environment(AppStore.self) private var store
+    @Environment(AppPreferences.self) private var preferences
 
     var body: some View {
         let count = store.unreadCount
-        HStack(spacing: 3) {
-            Image(systemName: symbol(count: count))
-            if count > 0 {
-                Text(verbatim: "\(count)")
+        if count > 0, preferences.colorUnreadCount {
+            // Image non « template » : sinon macOS redessine toute l'étiquette en monochrome
+            Image(nsImage: MenuBarImage.make(symbol: symbol(count: count),
+                                             count: count,
+                                             countColor: preferences.unreadCountColor))
+                .renderingMode(.original)
+        } else {
+            HStack(spacing: 3) {
+                Image(systemName: symbol(count: count))
+                if count > 0 {
+                    Text(verbatim: "\(count)")
+                }
             }
         }
     }

@@ -1,6 +1,36 @@
 {
   "sourceLanguage": "fr",
   "strings": {
+    "Couleur du nombre": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Count color"
+          }
+        }
+      }
+    },
+    "Nombre de non-lus en couleur dans la barre de menus": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Colored unread count in the menu bar"
+          }
+        }
+      }
+    },
+    "Revenir à la couleur par défaut": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restore default color"
+          }
+        }
+      }
+    },
     "%lld nouveaux messages": {
       "localizations": {
         "en": {

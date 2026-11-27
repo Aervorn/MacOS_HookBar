@@ -1,10 +1,12 @@
 import Foundation
+import Network
 
 /// Connexion temps réel au Gateway de Discord (WebSocket), avec le jeton du bot.
 ///
 /// Discord envoie un « Hello » avec l'intervalle de battement de cœur ; l'app s'identifie,
 /// puis reçoit les événements (serveurs, salons, messages). En cas de coupure, elle se
 /// reconnecte avec une attente croissante ; l'app rattrape ensuite les messages manqués par l'API REST.
+/// Sans réseau, ou après plusieurs échecs de suite, elle se déclare injoignable.
 @MainActor
 final class DiscordGateway {
     enum Event {
@@ -22,12 +24,18 @@ final class DiscordGateway {
         case disconnected
         case connecting
         case connected
+        /// Pas de réseau, ou Discord ne répond pas (les essais continuent dès que possible)
+        case unreachable
         case failed(String)
     }
 
     /// GUILDS (1 << 0), GUILD_MESSAGES (1 << 9), MESSAGE_CONTENT (1 << 15)
     static let intents = (1 << 0) | (1 << 9) | (1 << 15)
     private static let url = URL(string: "wss://gateway.discord.gg/?v=10&encoding=json")!
+    /// Nombre d'échecs de suite à partir duquel Discord est considéré comme injoignable.
+    private static let failuresBeforeUnreachable = 3
+    /// Durée maximale d'une tentative : sans « READY » dans ce délai, elle est abandonnée.
+    private static let connectTimeout: UInt64 = 10_000_000_000
 
     var onEvent: ((Event) -> Void)?
     var onState: ((State) -> Void)?
@@ -37,12 +45,24 @@ final class DiscordGateway {
     private var receiveTask: Task<Void, Never>?
     private var heartbeatTask: Task<Void, Never>?
     private var reconnectTask: Task<Void, Never>?
+    private var timeoutTask: Task<Void, Never>?
+    private let pathMonitor = NWPathMonitor()
+    private var networkAvailable = true
     /// Change à chaque nouvelle connexion : les tâches d'une ancienne connexion s'arrêtent d'elles-mêmes.
     private var generation = 0
     private var sequence: Int?
     private var heartbeatAcknowledged = true
     private var attempts = 0
     private var stopped = true
+
+    init() {
+        pathMonitor.pathUpdateHandler = { [weak self] path in
+            let available = path.status != .unsatisfied
+            MainActor.assumeIsolated { self?.networkChanged(available: available) }
+        }
+        // File principale : les changements arrivent dans l'ordre, sur le MainActor
+        pathMonitor.start(queue: .main)
+    }
 
     func connect(token: String) {
         tearDown()
@@ -71,15 +91,22 @@ final class DiscordGateway {
         heartbeatTask?.cancel()
         receiveTask?.cancel()
         reconnectTask?.cancel()
+        timeoutTask?.cancel()
         task?.cancel(with: .normalClosure, reason: nil)
         task = nil
     }
 
     private func open() {
+        // Sans réseau, inutile d'essayer : `networkChanged` relancera la connexion
+        guard networkAvailable else {
+            onState?(.unreachable)
+            return
+        }
         generation += 1
         let current = generation
         sequence = nil
-        onState?(.connecting)
+        // Les essais automatiques qui suivent plusieurs échecs restent affichés « hors ligne »
+        if attempts < Self.failuresBeforeUnreachable { onState?(.connecting) }
         let task = URLSession.shared.webSocketTask(with: Self.url)
         // GUILD_CREATE contient tous les salons du serveur : plus que la limite par défaut (1 Mo).
         task.maximumMessageSize = 16 * 1024 * 1024
@@ -87,6 +114,11 @@ final class DiscordGateway {
         task.resume()
         receiveTask = Task { [weak self] in
             await self?.receive(from: task, generation: current)
+        }
+        timeoutTask = Task { [weak self] in
+            try? await Task.sleep(nanoseconds: Self.connectTimeout)
+            guard let self, !Task.isCancelled, current == self.generation else { return }
+            self.scheduleReconnect(after: 2)
         }
     }
 
@@ -141,6 +173,7 @@ final class DiscordGateway {
         case "READY":
             guard let ready = decode(ReadyPayload.self) else { return }
             attempts = 0
+            timeoutTask?.cancel()
             onState?(.connected)
             onEvent?(.ready(ready))
         case "GUILD_CREATE", "GUILD_UPDATE":
@@ -208,6 +241,20 @@ final class DiscordGateway {
 
     // MARK: - Coupures
 
+    /// Réseau perdu : on s'arrête tout de suite. Réseau revenu : on se reconnecte sans attendre.
+    private func networkChanged(available: Bool) {
+        guard available != networkAvailable else { return }
+        networkAvailable = available
+        guard !stopped else { return }
+        if available {
+            attempts = 0
+            open()
+        } else {
+            tearDown()
+            onState?(.unreachable)
+        }
+    }
+
     private func handleClose(code: Int, reason: String) {
         if code == 4004 || reason.localizedCaseInsensitiveContains("authentication") {
             stopped = true
@@ -229,7 +276,7 @@ final class DiscordGateway {
         guard !stopped else { return }
         attempts += 1
         let delay = min(60, seconds * pow(2, Double(max(0, attempts - 1))))
-        onState?(.connecting)
+        onState?(attempts < Self.failuresBeforeUnreachable ? .connecting : .unreachable)
         reconnectTask = Task { [weak self] in
             try? await Task.sleep(nanoseconds: UInt64(delay * 1_000_000_000))
             guard let self, !Task.isCancelled, !self.stopped else { return }

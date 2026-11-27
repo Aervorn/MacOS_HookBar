@@ -37,6 +37,7 @@ La barre de menus indique combien de messages attendent. Un clic ouvre une fenê
 
 ### 🔔 Barre de menus
 - Une cloche avec le **nombre de messages non lus** ; une cloche barrée quand Discord est injoignable.
+- Le nombre de non-lus s'affiche **en couleur** : choisis la tienne, ou désactive-la dans **Réglages › Apparence**.
 - Pas d'icône dans le Dock ni dans ⌘⇥ : HookBar vit uniquement dans la barre de menus.
 
 ### 🗂️ La fenêtre
@@ -60,7 +61,7 @@ La barre de menus indique combien de messages attendent. Un clic ouvre une fenê
 - Après une longue coupure, une seule bannière récapitulative au lieu d'une avalanche.
 
 ### 🔄 Fiable
-- Connexion en temps réel (Gateway de Discord), avec reconnexion automatique après une coupure réseau ou à la sortie de veille du Mac.
+- Connexion en temps réel (Gateway de Discord), avec reconnexion automatique après une coupure réseau ou à la sortie de veille du Mac. Une perte de réseau est signalée aussitôt, et la connexion reprend dès son retour.
 - **Rien n'est perdu** : à la reconnexion, HookBar récupère les messages postés pendant la coupure (jusqu'à 100 par salon).
 - Les nouveaux salons de ton serveur sont suivis automatiquement (désactivable).
 
@@ -145,6 +146,11 @@ HookBar ne collecte rien et n'envoie rien sur toi : pas de compte, pas de statis
 HookBar se met à jour toute seule : elle cherche une nouvelle version une fois par jour et propose de l'installer, avec ses notes de version (ou **⚙ › Rechercher les mises à jour…** dans la fenêtre). Les mises à jour sont signées, et HookBar refuse tout fichier qui n'a pas été signé par l'auteur. La recherche automatique se désactive dans **Réglages › Mises à jour**. Les messages non lus, les réglages et le jeton sont conservés.
 
 ## 📝 Historique des versions
+
+### 0.2.0
+- **Nombre de non-lus en couleur** dans la barre de menus, avec une couleur au choix (désactivable dans les Réglages).
+- Correction : sans réseau ou quand Discord est injoignable, HookBar affiche désormais **Déconnecté** et la cloche barrée, au lieu de rester sur « Connexion à Discord… ».
+- Reconnexion immédiate au retour du réseau, et abandon d'une tentative de connexion bloquée après 10 secondes.
 
 ### 0.1.0
 - Première version publique : compteur dans la barre de menus, fenêtre façon Gitify, embeds Discord, marquer comme lu (coches ou clic), salons et bannières dans les Réglages, icônes selfh.st automatiques, rattrapage des messages manqués, français et anglais, mode clair et sombre, ouverture à la connexion, mises à jour Sparkle.

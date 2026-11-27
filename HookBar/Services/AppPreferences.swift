@@ -57,6 +57,8 @@ final class AppPreferences {
         static let language = "language"
         static let markReadOnClick = "markReadOnClick"
         static let autoFollowNewChannels = "autoFollowNewChannels"
+        static let colorUnreadCount = "colorUnreadCount"
+        static let unreadCountColor = "unreadCountColor"
     }
 
     private let defaults = UserDefaults.standard
@@ -85,6 +87,19 @@ final class AppPreferences {
         didSet { defaults.set(autoFollowNewChannels, forKey: Key.autoFollowNewChannels) }
     }
 
+    /// Affiche en couleur le nombre de non-lus dans la barre de menus.
+    var colorUnreadCount: Bool {
+        didSet { defaults.set(colorUnreadCount, forKey: Key.colorUnreadCount) }
+    }
+
+    /// Couleur de ce nombre (entier 0xRRGGBB).
+    var unreadCountColor: Int {
+        didSet { defaults.set(unreadCountColor, forKey: Key.unreadCountColor) }
+    }
+
+    /// Rouge système d'Apple, lisible sur une barre de menus claire ou sombre.
+    static let defaultUnreadCountColor = 0xFF453A
+
     /// Langue choisie au lancement : sert à savoir s'il faut relancer l'app.
     let launchLanguage: AppLanguage
 
@@ -95,6 +110,8 @@ final class AppPreferences {
         launchLanguage = language
         markReadOnClick = defaults.bool(forKey: Key.markReadOnClick)
         autoFollowNewChannels = defaults.object(forKey: Key.autoFollowNewChannels) as? Bool ?? true
+        colorUnreadCount = defaults.object(forKey: Key.colorUnreadCount) as? Bool ?? true
+        unreadCountColor = defaults.object(forKey: Key.unreadCountColor) as? Int ?? Self.defaultUnreadCountColor
     }
 
     // MARK: - Ouverture à la connexion
