@@ -4,14 +4,18 @@
     <title>HookBar</title>
     <link>https://github.com/Aervorn/MacOS_HookBar</link>
     <item>
-      <title>HookBar 0.1.0</title>
-      <pubDate>Wed, 18 Nov 2026 21:19:58 +0000</pubDate>
-      <sparkle:version>1</sparkle:version>
-      <sparkle:shortVersionString>0.1.0</sparkle:shortVersionString>
+      <title>HookBar 0.2.0</title>
+      <pubDate>Fri, 27 Nov 2026 10:19:38 +0000</pubDate>
+      <sparkle:version>2</sparkle:version>
+      <sparkle:shortVersionString>0.2.0</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
-      <description><![CDATA[<ul><li>First public version: menu bar counter, Gitify-style window, Discord embeds, mark as read (checks or click), channels and banners in Settings, automatic selfh.st icons, catching up on missed messages, French and English, light and dark mode, open at login, Sparkle updates.</li></ul>]]></description>
-      <description xml:lang="fr"><![CDATA[<ul><li>Première version publique : compteur dans la barre de menus, fenêtre façon Gitify, embeds Discord, marquer comme lu (coches ou clic), salons et bannières dans les Réglages, icônes selfh.st automatiques, rattrapage des messages manqués, français et anglais, mode clair et sombre, ouverture à la connexion, mises à jour Sparkle.</li></ul>]]></description>
-      <enclosure url="https://github.com/Aervorn/MacOS_HookBar/releases/download/v0.1.0/HookBar-0.1.0.dmg" type="application/octet-stream" sparkle:edSignature="2dlG6ESPHiAn0ofzZG+y4/ZbisMecu+kVnRhFwE1/2rGqiLXWx4zkKNdQxrP4kNd8hJDqzNbtWKUXgE6i04KBQ==" length="3409419" />
+      <description><![CDATA[<ul><li><b>Colored unread count</b> in the menu bar, in the color of your choice (can be turned off in Settings).</li>
+<li>Fix: with no network or when Discord can't be reached, HookBar now shows <b>Disconnected</b> and the slashed bell, instead of staying on “Connecting to Discord…”.</li>
+<li>Immediate reconnection when the network is back, and a stuck connection attempt is dropped after 10 seconds.</li></ul>]]></description>
+      <description xml:lang="fr"><![CDATA[<ul><li><b>Nombre de non-lus en couleur</b> dans la barre de menus, avec une couleur au choix (désactivable dans les Réglages).</li>
+<li>Correction : sans réseau ou quand Discord est injoignable, HookBar affiche désormais <b>Déconnecté</b> et la cloche barrée, au lieu de rester sur « Connexion à Discord… ».</li>
+<li>Reconnexion immédiate au retour du réseau, et abandon d'une tentative de connexion bloquée après 10 secondes.</li></ul>]]></description>
+      <enclosure url="https://github.com/Aervorn/MacOS_HookBar/releases/download/v0.2.0/HookBar-0.2.0.dmg" type="application/octet-stream" sparkle:edSignature="VjRgg3rgLhYYwwBQuGLl+idhLVSnnfxYXrjYEQUWTj13f6KNhRQtsJrnow7FYRx4WodMhU50qSXwDIvEgQ6xAw==" length="3424954" />
     </item>
   </channel>
 </rss>
