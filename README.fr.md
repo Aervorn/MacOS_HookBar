@@ -151,6 +151,9 @@ HookBar se met à jour toute seule : elle cherche une nouvelle version une fois 
 
 ## 📝 Historique des versions
 
+### 0.2.1
+- Correction : les fenêtres **Réglages** et **À propos** pouvaient parfois s'ouvrir derrière les autres applications.
+
 ### 0.2.0
 - **Nombre de non-lus en couleur** dans la barre de menus, avec une couleur au choix (désactivable dans les Réglages).
 - Correction : sans réseau ou quand Discord est injoignable, HookBar affiche désormais **Déconnecté** et la cloche barrée, au lieu de rester sur « Connexion à Discord… ».

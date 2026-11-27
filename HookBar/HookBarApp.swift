@@ -95,4 +95,19 @@ struct MenuBarLabel: View {
 func bringToFront(_ openWindow: OpenWindowAction, id: String) {
     openWindow(id: id)
     NSApp.activate()
+    // `activate()` n'est qu'une demande, que macOS peut ignorer : on remonte aussi la fenêtre elle-même.
+    Task { @MainActor in
+        // La fenêtre n'est pas forcément créée tout de suite : quelques essais rapprochés
+        for _ in 0..<10 {
+            try? await Task.sleep(nanoseconds: 50_000_000)
+            // SwiftUI reprend l'identifiant de la scène dans celui de la fenêtre
+            if let window = NSApp.windows.first(where: { $0.identifier?.rawValue.hasPrefix(id) == true }) {
+                NSApp.activate()
+                window.makeKeyAndOrderFront(nil)
+                window.orderFrontRegardless()
+                return
+            }
+        }
+        NSLog("HookBar: fenêtre « \(id) » introuvable, impossible de la passer au premier plan")
+    }
 }

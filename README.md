@@ -151,6 +151,9 @@ HookBar updates itself: it checks for a new version once a day and offers to ins
 
 ## 📝 Changelog
 
+### 0.2.1
+- Fix: the **Settings** and **About** windows could sometimes open behind other apps.
+
 ### 0.2.0
 - **Colored unread count** in the menu bar, in the color of your choice (can be turned off in Settings).
 - Fix: with no network or when Discord can't be reached, HookBar now shows **Disconnected** and the slashed bell, instead of staying on “Connecting to Discord…”.
