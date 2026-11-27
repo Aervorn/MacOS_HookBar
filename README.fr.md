@@ -30,6 +30,10 @@ La barre de menus indique combien de messages attendent. Un clic ouvre une fenê
 ## 📸 Captures d'écran
 
 <p align="center">
+  <img src="docs/screenshots/menubar.png" alt="Icône de HookBar dans la barre de menus avec le nombre de non-lus en couleur" />
+</p>
+
+<p align="center">
   <img src="docs/screenshots/window-fr.png" width="470" alt="Fenêtre de HookBar : salons non lus à gauche, leurs messages à droite" />
 </p>
 

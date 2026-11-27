@@ -30,6 +30,10 @@ The menu bar shows how many messages are waiting. A click opens a window inspire
 ## 📸 Screenshots
 
 <p align="center">
+  <img src="docs/screenshots/menubar.png" alt="HookBar menu bar icon with a colored unread count" />
+</p>
+
+<p align="center">
   <img src="docs/screenshots/window.png" width="470" alt="HookBar window: channels with unread messages on the left, their messages on the right" />
 </p>
 
